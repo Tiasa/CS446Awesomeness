@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/upload_choice"
+        android:layout_gravity="center_horizontal"
+        android:text="How Do you want to upload the notes?" />
+
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="Upload a PDF"
+        android:id="@+id/pdf_button"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.24" />
+
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="Take Pictures"
+        android:id="@+id/picture_button"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.24" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:weightSum="1">
+
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/page_choice1"
+            android:layout_gravity="center_horizontal"
+            android:text="of" />
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:id="@+id/numberPicker" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/page_choice2"
+            android:layout_gravity="center_horizontal"
+            android:text="pages"/>
+    </LinearLayout>
+
+</LinearLayout>
