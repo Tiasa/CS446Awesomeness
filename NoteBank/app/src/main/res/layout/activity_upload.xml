@@ -30,12 +30,12 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Course Name"
-                android:id="@+id/textView1" />
+                android:id="@+id/upload_coursename_text" />
 
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:id="@+id/course_name"
+                android:id="@+id/upload_coursename_spinner"
                 android:layout_gravity="center_horizontal"
                 android:spinnerMode="dropdown" />
 
@@ -45,12 +45,12 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Course ID"
-                android:id="@+id/textView2" />
+                android:id="@+id/upload_courseid_text" />
 
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:id="@+id/course_id"
+                android:id="@+id/upload_courseid_spinner"
                 android:layout_gravity="center_horizontal"
                 android:spinnerMode="dropdown" />
 
@@ -59,35 +59,29 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Professor"
-                android:id="@+id/textView3" />
+                android:id="@+id/upload_courseprof_text" />
 
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:id="@+id/course_prof"
+                android:id="@+id/upload_courseprof_spinner"
                 android:layout_gravity="center_horizontal"
                 android:spinnerMode="dropdown"
                 android:layout_weight="0.80" />
 
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_gravity="center_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="What is the date of the class?"
+                android:id="@+id/upload_date_text" />
 
-                <DatePicker
-                    android:layout_width="250dp"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/datePicker" />
+            <DatePicker
+                android:layout_width="278dp"
+                android:layout_height="191dp"
+                android:id="@+id/datePickerUp" />
 
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:text="New Button"
-                    android:id="@+id/button" />
-            </LinearLayout>
 
             <Button
                 android:id="@+id/note_upload"

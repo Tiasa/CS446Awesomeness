@@ -36,9 +36,9 @@ public class UploadActivity extends Activity {
         String list_CN[] = {"CS","Math","SE"};
         String list_CID[] = {"100","200","300"};
         String list_CProf[] = {"Prof A","Prof B"};
-        sp_course_name = (Spinner) findViewById(R.id.course_name);
-        sp_course_id = (Spinner) findViewById(R.id.course_id);
-        sp_course_prof = (Spinner) findViewById(R.id.course_prof);
+        sp_course_name = (Spinner) findViewById(R.id.upload_coursename_spinner);
+        sp_course_id = (Spinner) findViewById(R.id.upload_courseid_spinner);
+        sp_course_prof = (Spinner) findViewById(R.id.upload_courseprof_spinner);
 
         // generate all drop-down list
         ArrayAdapter<String>  dataAdapter = new ArrayAdapter<String>(this,
@@ -59,16 +59,16 @@ public class UploadActivity extends Activity {
 
     public void addListenerOnSpinnerItemSelection() {
         // TODO: 6/17/16 may not need listener for each spinner 
-        sp_course_name = (Spinner) findViewById(R.id.course_name);
+        sp_course_name = (Spinner) findViewById(R.id.upload_coursename_spinner);
         sp_course_name.setOnItemSelectedListener(new CustomOnItemSelectedListener());
     }
 
     // get the selected dropdown list value
     public void addListenerOnButton() {
 
-        sp_course_name = (Spinner) findViewById(R.id.course_name);
-        sp_course_id = (Spinner) findViewById(R.id.course_id);
-        btnSubmit = (Button) findViewById(R.id.couse_search);
+        sp_course_name = (Spinner) findViewById(R.id.upload_coursename_spinner);
+        sp_course_id = (Spinner) findViewById(R.id.upload_courseid_spinner);
+        btnSubmit = (Button) findViewById(R.id.note_upload);
         final Context context = this;
 
         btnSubmit.setOnClickListener(new OnClickListener() {
@@ -82,7 +82,7 @@ public class UploadActivity extends Activity {
                                 "\nSpinner 2 : " + String.valueOf(sp_course_id.getSelectedItem()),
                         Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(context, SearchResultView.class);
+                Intent intent = new Intent(context, UploadChoiceActivity.class);
                 startActivity(intent);
 
             }
