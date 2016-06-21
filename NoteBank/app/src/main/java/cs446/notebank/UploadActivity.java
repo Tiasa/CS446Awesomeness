@@ -75,7 +75,7 @@ public class UploadActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                // TODO: 6/17/16 need serach
+                // TODO: 6/17/16 need search
                 Toast.makeText(UploadActivity.this,
                         "OnClickListener : " +
                                 "\nSpinner 1 : " + String.valueOf(sp_course_name.getSelectedItem()) +
@@ -84,7 +84,6 @@ public class UploadActivity extends Activity {
 
                 Intent intent = new Intent(context, UploadChoiceActivity.class);
                 startActivity(intent);
-
             }
         });
     }

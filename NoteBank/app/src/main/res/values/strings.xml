@@ -13,5 +13,14 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="serach">serach</string>
+    <!-- Strings related to upload/download pages -->
+    <string name="search_button">search</string>
+    <string name="upload_button">upload</string>
+
+    <string name="professor_header">Professor</string>
+    <string name="course_name_header">Course Name</string>
+    <string name="course_id_header">Course ID</string>
+    <string name="upload_date_prompt">Which day\'s notes are you uploading?</string>
+    <string name="download_date_prompt">Which day\'s notes are you looking for?</string>
+
 </resources>

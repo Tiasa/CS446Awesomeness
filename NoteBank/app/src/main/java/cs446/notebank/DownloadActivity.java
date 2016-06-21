@@ -76,14 +76,14 @@ public class DownloadActivity extends Activity {
 
         sp_course_name = (Spinner) findViewById(R.id.course_name);
         sp_course_id = (Spinner) findViewById(R.id.course_id);
-        btnSubmit = (Button) findViewById(R.id.couse_search);
+        btnSubmit = (Button) findViewById(R.id.course_search);
         final Context context = this;
 
         btnSubmit.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                // TODO: 6/17/16 need serach
+                // TODO: 6/17/16 need search
                 Toast.makeText(DownloadActivity.this,
                         "OnClickListener : " +
                                 "\nSpinner 1 : " + String.valueOf(sp_course_name.getSelectedItem()) +
@@ -92,7 +92,6 @@ public class DownloadActivity extends Activity {
 
                 Intent intent = new Intent(context, SearchResultView.class);
                 startActivity(intent);
-
             }
         });
     }
