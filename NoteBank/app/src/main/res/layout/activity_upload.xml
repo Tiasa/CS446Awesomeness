@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Course Name"
+                android:text="@string/course_name_header"
                 android:id="@+id/upload_coursename_text" />
 
             <Spinner
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Course ID"
+                android:text="@string/course_id_header"
                 android:id="@+id/upload_courseid_text" />
 
             <Spinner
@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Professor"
+                android:text="@string/professor_header"
                 android:id="@+id/upload_courseprof_text" />
 
             <Spinner
@@ -74,14 +74,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="What is the date of the class?"
+                android:text="@string/upload_date_prompt"
                 android:id="@+id/upload_date_text" />
 
-            <DatePicker
-                android:layout_width="278dp"
-                android:layout_height="191dp"
-                android:id="@+id/datePickerUp" />
 
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="400dp"
+                android:id="@+id/datePickerUp"
+                android:measureAllChildren="false" />
 
             <Button
                 android:id="@+id/note_upload"
@@ -89,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Upload Notes"
+                android:text="@string/upload_button"
                 android:textStyle="bold" />
 
 

@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Course Name"
+                android:text="@string/course_name_header"
                 android:id="@+id/textView1" />
 
             <Spinner
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Course ID"
+                android:text="@string/course_id_header"
                 android:id="@+id/textView2" />
 
             <Spinner
@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Professor"
+                android:text="@string/professor_header"
                 android:id="@+id/textView3" />
 
             <Spinner
@@ -68,37 +68,26 @@
                 android:spinnerMode="dropdown"
                 android:layout_weight="0.80" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/download_date_prompt"
+                android:id="@+id/download_date_text" />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_gravity="center_horizontal">
-
-                <DatePicker
-                    android:layout_width="250dp"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/datePicker" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:text="New Button"
-                    android:id="@+id/button" />
-            </LinearLayout>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="400dp"
+                android:id="@+id/datePicker" />
 
             <Button
-                android:id="@+id/couse_search"
+                android:id="@+id/course_search"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/serach"
+                android:text="@string/search_button"
                 android:textStyle="bold" />
-
-
-
 
         </LinearLayout>
     </ScrollView>
