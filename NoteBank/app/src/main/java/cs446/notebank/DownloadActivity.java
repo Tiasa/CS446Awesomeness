@@ -84,11 +84,6 @@ public class DownloadActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO: 6/17/16 need search
-                Toast.makeText(DownloadActivity.this,
-                        "OnClickListener : " +
-                                "\nSpinner 1 : " + String.valueOf(sp_course_name.getSelectedItem()) +
-                                "\nSpinner 2 : " + String.valueOf(sp_course_id.getSelectedItem()),
-                        Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(context, SearchResultView.class);
                 startActivity(intent);

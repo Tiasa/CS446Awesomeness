@@ -1,15 +1,19 @@
 package cs446.notebank;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ScrollView;
 import android.widget.LinearLayout;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 
 /**
@@ -27,14 +31,21 @@ public class SearchResultView extends Activity {
         ll.setOrientation(LinearLayout.VERTICAL);
         sv.addView(ll);
 
-
+        final Context context = this;
         // real info should come from model
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 20; i++) {
             TextView tv = new TextView(this);
             tv.setText("Name + Format");
             ll.addView(tv);
             Button b = new Button(this);
             b.setText("Preview");
+            b.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, PreviewActivity.class);
+                    startActivity(intent);
+                }
+            });
             ll.addView(b);
         }
         this.setContentView(sv);
