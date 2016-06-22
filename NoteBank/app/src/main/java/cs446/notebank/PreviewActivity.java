@@ -20,7 +20,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class PreviewActivity extends Activity {
-    private WebView view; //membuat variabel view agar bisa akses method onKeyDown
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -33,6 +33,7 @@
         <activity android:name=".SelectActivity" />
         <activity android:name=".UploadActivity"/>
         <activity android:name=".UploadChoiceActivity"></activity>
+        <activity android:name=".PreviewActivity"></activity>
     </application>
 
 </manifest>
