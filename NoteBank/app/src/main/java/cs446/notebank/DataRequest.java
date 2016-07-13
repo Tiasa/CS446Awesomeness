@@ -129,6 +129,36 @@ public class DataRequest {
                     e.printStackTrace();
                     return 1;
                 }//end try-catch
+            }else if (type.equals("users")) {
+                user.clear();
+                password.clear();
+                email.clear();
+
+                try {
+                    //get the JSON array
+                    JSONArray jsonArray = new JSONArray(data);
+
+                    //loop through the array
+                    for (int i=0;i < jsonArray.length();i++ ) {
+                        JSONObject temp= jsonArray.getJSONObject(i);
+
+                        //get the name
+                        String t_user = temp.getString(TAG_USERNAME);
+                        String t_email = temp.getString(TAG_EMAIL);
+                        String t_pass = temp.getString(TAG_PASSWORD);
+
+                        //push to the array
+                        user.add(t_user);
+                        password.add(t_pass);
+                        email.add(t_email);
+
+                    }//end for loop
+
+                }catch (Exception e) {
+                    e.printStackTrace();
+                    return 1;
+                }//end try-catch
+
             } //end if type
         }else {
 

@@ -30,7 +30,7 @@ public class DownloadActivity extends Activity {
     //data is stored in the internal arraylist of data_model
     //if you want to pull out information simple do this:
     //              data_model.prof => this return a List<String> with prof
-    public static DataRequest data_model = new DataRequest();
+    private static DataRequest data_model = new DataRequest();
 
     private Spinner sp_course_name,sp_course_id,sp_course_prof;
     Button btnSubmit;
@@ -78,8 +78,7 @@ public class DownloadActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download);
         //create the subclass
-        GetData ct = new GetData();
-        ct.execute();
+
 
         addItemsOnSpinner();
         addListenerOnButton();
@@ -91,7 +90,8 @@ public class DownloadActivity extends Activity {
     // add items into spinner dynamically
     public void addItemsOnSpinner() {
         // TODO: GET IS DONE - NEED TO DO POST
-
+        GetData gd = new GetData();
+        gd.execute();
         //Reading information to the spinner
         ArrayList<String> list_CN = data_model.course_name;
         ArrayList<String> list_CID = data_model.course_name;
