@@ -19,7 +19,7 @@
 
     <string name="professor_header">Professor</string>
     <string name="course_name_header">Course Name</string>
-    <string name="course_id_header">Course ID</string>
+    <string name="course_term_header">Course Term</string>
     <string name="upload_date_prompt">Which day\'s notes are you uploading?</string>
     <string name="download_date_prompt">Which day\'s notes are you looking for?</string>
 

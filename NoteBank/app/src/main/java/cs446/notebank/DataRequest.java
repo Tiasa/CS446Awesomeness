@@ -12,7 +12,8 @@ package cs446.notebank;
     import java.net.HttpURLConnection;
     import java.net.URL;
     import java.util.ArrayList;
-
+    import java.util.HashSet;
+    import java.util.Set;
 
 public class DataRequest {
     //TODO: POST does not work since we dont have post working
@@ -95,18 +96,15 @@ public class DataRequest {
     //return 1 if error, 0if everything go smoothly
     private  int parseJSON(String type,String data) {
         //if its null data, return 1 to signal error
-
-
-
         if (data != null) {
             //switch cases
             if (type.equals("courses")) {
                 //CLEAR ALL THE OLD DATA before reading anything
-                prof.clear();
-                course_name.clear();
-                term.clear();
-
+                //Using sets to avoid duplicates, but converting back to arrayLists at the end
                 try {
+                    Set<String> profSet = new HashSet<>();
+                    Set<String> courseSet = new HashSet<>();
+                    Set<String> termSet = new HashSet<>();
                     //get the JSON array
                     JSONArray jsonArray = new JSONArray(data);
 
@@ -120,11 +118,19 @@ public class DataRequest {
                         String t_term = temp.getString(TAG_TERM);
 
                         //push to the array
-                        prof.add(t_prof);
-                        course_name.add(t_name);
-                        term.add(t_term);
+                        profSet.add(t_prof);
+                        courseSet.add(t_name);
+                        termSet.add(t_term);
                     }//end for loop
 
+                    // Add the sets to the corresponding ArrayLists
+                    prof.clear();
+                    course_name.clear();
+                    term.clear();
+
+                    prof.addAll(profSet);
+                    course_name.addAll(courseSet);
+                    term.addAll(termSet);
                 }catch (Exception e) {
                     e.printStackTrace();
                     return 1;
