@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ScrollView;
 import android.widget.LinearLayout;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.CheckBox;
 import android.view.View;
 import android.content.Intent;
+
 
 
 import org.json.JSONArray;
@@ -39,9 +41,10 @@ public class SearchResultView extends Activity {
         String course_prof = getIntent().getStringExtra("course_prof");
 
         DataRequest search_result = new DataRequest();
-        search_result.getRequest("notebank.click/documents");
+        search_result.getRequest("http://notebank.click/documents");
         JSONArray search_json = search_result.search_json;
-
+        int t = search_json.length();
+        Log.d("here2",Integer.toString(t));
         // TODO: 7/21/16 should filter the json result
 
         try {

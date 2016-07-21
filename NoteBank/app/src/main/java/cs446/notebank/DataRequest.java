@@ -3,6 +3,8 @@ package cs446.notebank;
 /**
  * Created by Long on 7/12/2016.
  */
+    import android.util.Log;
+
     import org.json.JSONArray;
     import org.json.JSONObject;
 
@@ -97,6 +99,7 @@ public class DataRequest {
     //return 1 if error, 0if everything go smoothly
     private  int parseJSON(String type,String data) {
         //if its null data, return 1 to signal error
+        Log.d("here3",type);
         if (data != null) {
             //switch cases
             if (type.equals("courses")) {
@@ -170,7 +173,7 @@ public class DataRequest {
 
                 try {
                     search_json = new JSONArray(data);
-
+                    Log.d("here1","yes");
                 } catch (Exception e) {
                     e.printStackTrace();
                     return 1;

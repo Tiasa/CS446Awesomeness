@@ -22,7 +22,7 @@ public class PdfViewActivity extends Activity{
 
         // // TODO: 6/22/16 should go to actual URL, this is for demo
         int data_id = getIntent().getIntExtra("data_id",0);
-        String pdfURL = "notebank.click/data/" + Integer.toString(data_id);
+        String pdfURL = "http://notebank.click/data/" + Integer.toString(data_id);
         webView.loadUrl(
                 "http://docs.google.com/gview?embedded=true&url=" + pdfURL);
 
