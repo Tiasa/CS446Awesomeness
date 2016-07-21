@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.CheckBox;
+import android.view.View;
+import android.content.Intent;
+
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -44,7 +47,7 @@ public class SearchResultView extends Activity {
             for (int i = 0; i < search_json.length(); i++) {
 
                 JSONObject temp = search_json.getJSONObject(i);
-                int data_id = temp.getInt("data_id");
+                final int data_id = temp.getInt("data_id");
                 TextView tv = new TextView(this);
                 tv.setText("Name + Format + " + Integer.toString(data_id));
                 ll.addView(tv);
@@ -52,7 +55,17 @@ public class SearchResultView extends Activity {
                 b.setText("Preview");
                 ll.addView(b);
 
-                
+
+                b.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(context, PdfViewActivity.class);
+                        intent.putExtra("data_id",data_id);
+                        startActivity(intent);
+                    }
+                });
+
+
             }
         } catch (Exception e) {
             e.printStackTrace();
