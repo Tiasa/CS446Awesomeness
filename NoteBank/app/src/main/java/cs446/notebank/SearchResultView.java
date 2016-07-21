@@ -11,6 +11,9 @@ import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.CheckBox;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 
 /**
  * Created by aaronlovejan on 6/17/16.
@@ -27,16 +30,36 @@ public class SearchResultView extends Activity {
         ll.setOrientation(LinearLayout.VERTICAL);
         sv.addView(ll);
 
+        String course_id = getIntent().getStringExtra("course_id");
+        String course_name = getIntent().getStringExtra("course_name");
+        String course_prof = getIntent().getStringExtra("course_prof");
 
-        // real info should come from model
-        for(int i = 0; i < 10; i++) {
-            TextView tv = new TextView(this);
-            tv.setText("Name + Format");
-            ll.addView(tv);
-            Button b = new Button(this);
-            b.setText("Preview");
-            ll.addView(b);
-        }
+        DataRequest search_result = new DataRequest();
+        search_result.getRequest("notebank.click/documents");
+        JSONArray search_json = search_result.search_json;
+
+        // TODO: 7/21/16 should filter the json result
+
+        try {
+            for (int i = 0; i < search_json.length(); i++) {
+
+                JSONObject temp = search_json.getJSONObject(i);
+                int data_id = temp.getInt("data_id");
+                TextView tv = new TextView(this);
+                tv.setText("Name + Format + " + Integer.toString(data_id));
+                ll.addView(tv);
+                Button b = new Button(this);
+                b.setText("Preview");
+                ll.addView(b);
+
+                
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }//end try-catch
+
+
+
         this.setContentView(sv);
 
 

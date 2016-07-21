@@ -15,6 +15,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+
 /**
  * Created by aaronlovejan on 6/10/16.OO
  */
@@ -69,11 +71,9 @@ public class DownloadActivity extends Activity {
         setContentView(R.layout.activity_download);
         //create the subclass
 
-
         addItemsOnSpinner();
         addListenerOnButton();
         addListenerOnSpinnerItemSelection();
-
 
     }
 
@@ -137,11 +137,16 @@ public class DownloadActivity extends Activity {
                 // TODO: 6/17/16 need search
                 Toast.makeText(DownloadActivity.this,
                         "OnClickListener : " +
-                                "\nSpinner 1 : " + String.valueOf(sp_course_name.getSelectedItem()) +
+                                    "\nSpinner 1 : " + String.valueOf(sp_course_name.getSelectedItem()) +
                                 "\nSpinner 2 : " + String.valueOf(sp_course_id.getSelectedItem()),
                         Toast.LENGTH_SHORT).show();
 
+
+
                 Intent intent = new Intent(context, SearchResultView.class);
+                intent.putExtra("course_name",String.valueOf(sp_course_name.getSelectedItem()));
+                intent.putExtra("course_id",String.valueOf(sp_course_id.getSelectedItem()));
+                intent.putExtra("course_prof",String.valueOf(sp_course_prof.getSelectedItem()));
                 startActivity(intent);
             }
         });

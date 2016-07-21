@@ -36,6 +36,7 @@ public class DataRequest {
     ArrayList<String> term = new ArrayList<>();
 
 
+    JSONArray search_json;
     //constructor
     public DataRequest() {}
 
@@ -165,7 +166,16 @@ public class DataRequest {
                     return 1;
                 }//end try-catch
 
-            } //end if type
+            } else if (type.equals("documents")) {
+
+                try {
+                    search_json = new JSONArray(data);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return 1;
+                }//end
+            }
         }else {
 
             return 1;
