@@ -43,13 +43,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/course_id_header"
+                android:text="@string/course_term_header"
                 android:id="@+id/textView2" />
 
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:id="@+id/course_id"
+                android:id="@+id/term"
                 android:layout_gravity="center_horizontal"
                 android:spinnerMode="dropdown" />
 

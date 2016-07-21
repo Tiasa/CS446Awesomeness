@@ -1,7 +1,6 @@
 package cs446.notebank;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -9,19 +8,12 @@ import android.content.Intent;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.AdapterView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by aaronlovejan on 6/10/16.OO
@@ -34,8 +26,6 @@ public class DownloadActivity extends Activity {
 
     private Spinner sp_course_name,sp_course_id,sp_course_prof;
     Button btnSubmit;
-
-
 
     //Async task class to get json by making HTTP call
     //HAVE to create this class because we cant make HTTP request on main thread
@@ -94,12 +84,12 @@ public class DownloadActivity extends Activity {
         gd.execute();
         //Reading information to the spinner
         ArrayList<String> list_CN = data_model.course_name;
-        ArrayList<String> list_CID = data_model.course_name;
+        ArrayList<String> list_CT = data_model.term;
         ArrayList<String> list_CProf = data_model.prof;
 
 
         sp_course_name = (Spinner) findViewById(R.id.course_name);
-        sp_course_id = (Spinner) findViewById(R.id.course_id);
+        sp_course_id = (Spinner) findViewById(R.id.term);
         sp_course_prof = (Spinner) findViewById(R.id.course_prof);
 
         // generate all drop-down list
@@ -113,7 +103,7 @@ public class DownloadActivity extends Activity {
 
         dataAdapter = new ArrayAdapter<>(this,
                                          android.R.layout.simple_spinner_item,
-                                         list_CID);
+                                         list_CT);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp_course_id.setAdapter(dataAdapter);
 
@@ -136,7 +126,7 @@ public class DownloadActivity extends Activity {
     public void addListenerOnButton() {
 
         sp_course_name = (Spinner) findViewById(R.id.course_name);
-        sp_course_id = (Spinner) findViewById(R.id.course_id);
+        sp_course_id = (Spinner) findViewById(R.id.term);
         btnSubmit = (Button) findViewById(R.id.course_search);
         final Context context = this;
 
