@@ -38,4 +38,4 @@ public class PdfViewActivity extends Activity{
     }
 }
 
-}
+
