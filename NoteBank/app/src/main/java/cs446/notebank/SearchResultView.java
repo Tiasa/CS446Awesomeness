@@ -1,6 +1,7 @@
 package cs446.notebank;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.Bundle;
@@ -55,7 +56,7 @@ public class SearchResultView extends Activity {
                 b.setText("Preview");
                 ll.addView(b);
 
-
+                final Context context = this;
                 b.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -70,8 +71,6 @@ public class SearchResultView extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }//end try-catch
-
-
 
         this.setContentView(sv);
 
