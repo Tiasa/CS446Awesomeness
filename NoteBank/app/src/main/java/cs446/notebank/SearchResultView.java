@@ -95,9 +95,11 @@ public class SearchResultView extends Activity {
                 JSONObject temp= jsonArray.getJSONObject(i);
 
                 String data_id = temp.getString("data_id");
+                String user_id = temp.getString("user_id");
+                String created_at = temp.getString("created_at");
                 Log.d("info",data_id);
                 TextView tv = new TextView(this);
-                tv.setText("Name + Format + " + data_id);
+                tv.setText("User id " + user_id + " created at " + created_at);
                 ll.addView(tv);
                 Button b = new Button(this);
                 b.setText("Preview");
@@ -113,18 +115,11 @@ public class SearchResultView extends Activity {
                         startActivity(intent);
                     }
                 });
-
-
             }
         } catch (Exception e) {
             e.printStackTrace();
         }//end try-catch
 
         this.setContentView(sv);
-
-
     }
-
-
-
 }
