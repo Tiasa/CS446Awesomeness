@@ -3,6 +3,8 @@ package cs446.notebank;
 /**
  * Created by Long on 7/12/2016.
  */
+    import android.util.Log;
+
     import org.json.JSONArray;
     import org.json.JSONObject;
 
@@ -13,6 +15,7 @@ package cs446.notebank;
     import java.net.URL;
     import java.util.ArrayList;
     import java.util.HashSet;
+    import java.util.Hashtable;
     import java.util.Set;
 
 public class DataRequest {
@@ -35,7 +38,7 @@ public class DataRequest {
     ArrayList<String> course_name = new ArrayList<>();
     ArrayList<String> term = new ArrayList<>();
 
-
+    JSONArray search_result;
     //constructor
     public DataRequest() {}
 
@@ -48,6 +51,7 @@ public class DataRequest {
     public int getRequest(String url) {
         String raw_data;
         String type;
+        HttpURLConnection con = null;
         try {
             URL myurl = new URL(url);
 
@@ -56,7 +60,7 @@ public class DataRequest {
             type = type.substring(type.lastIndexOf("/")+ 1);
 
 
-            HttpURLConnection con = (HttpURLConnection) myurl.openConnection();
+            con = (HttpURLConnection) myurl.openConnection();
 
             // HTTP GET we do stuff here
             //set property, time out if it takes too long
@@ -81,8 +85,11 @@ public class DataRequest {
             raw_data = response.toString();
         }catch (Exception e) {
             //this is debug, if you got any exception thrown, use this to google
+            Log.d("here","cant get data");
             e.printStackTrace();
             return 1;
+        } finally {
+            con.disconnect();
         }
 
         //parseJSON and store in this one
@@ -96,6 +103,7 @@ public class DataRequest {
     //return 1 if error, 0if everything go smoothly
     private  int parseJSON(String type,String data) {
         //if its null data, return 1 to signal error
+        Log.d("type",type);
         if (data != null) {
             //switch cases
             if (type.equals("courses")) {
@@ -165,9 +173,36 @@ public class DataRequest {
                     return 1;
                 }//end try-catch
 
-            } //end if type
-        }else {
+            } else {
 
+                try {
+                    search_result = new JSONArray(data);
+//                    Hashtable<String,String> info_row = new Hashtable<>();
+//                    //loop through the array
+//                    Log.d("here",Integer.toString(jsonArray.length()));
+//                    for (int i=0;i < jsonArray.length();i++ ) {
+//                        info_row.clear();
+//                        JSONObject temp= jsonArray.getJSONObject(i);
+//
+//                        //get the info
+//                        String t_user = temp.getString("user_id");
+//                        String t_date = temp.getString("date");
+//                        String t_data = temp.getString("data_id");
+//                        Log.d("get info", t_data);
+//
+//                        info_row.put("user_id",t_user);
+//                        info_row.put("date",t_date);
+//                        info_row.put("data_id",t_data);
+//
+//                        search_result.add(info_row);
+//                    }//end for loop
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return 1;
+                }//end
+            }
+        }else {
+            Log.d("data","no date from request");
             return 1;
         } //end null check
 
