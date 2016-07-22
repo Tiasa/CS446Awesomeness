@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -82,6 +83,8 @@ public class DownloadActivity extends Activity {
         // TODO: GET IS DONE - NEED TO DO POST
         GetData gd = new GetData();
         gd.execute();
+        SystemClock.sleep(2000);
+
         //Reading information to the spinner
         ArrayList<String> list_CN = data_model.course_name;
         ArrayList<String> list_CT = data_model.term;

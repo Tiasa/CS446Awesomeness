@@ -20,7 +20,6 @@ public class PdfViewActivity extends Activity{
         webView.getSettings().setPluginState(WebSettings.PluginState.ON);
         webView.setWebViewClient(new Callback());
 
-        // // TODO: 6/22/16 should go to actual URL, this is for demo
         int data_id = getIntent().getIntExtra("data_id",0);
         String pdfURL = "http://notebank.click/data/" + Integer.toString(data_id);
         webView.loadUrl(
