@@ -18,17 +18,17 @@ public class UploadChoiceActivity extends AppCompatActivity {
         addListenerOnButton();
     }
     public void addListenerOnButton() {
-        picture = (Button) findViewById(R.id.picture_button);
-        picker = (NumberPicker) findViewById(R.id.numberPicker);
-        picture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final int REQUEST_IMAGE_CAPTURE = picker.getValue();
-                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-                }
-            }
-        });
+//        picture = (Button) findViewById(R.id.picture_button);
+//        picker = (NumberPicker) findViewById(R.id.numberPicker);
+//        picture.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                final int REQUEST_IMAGE_CAPTURE = picker.getValue();
+//                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+//                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+//                }
+//            }
+//        });
     }
 }

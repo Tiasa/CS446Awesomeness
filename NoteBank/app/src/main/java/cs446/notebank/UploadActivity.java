@@ -67,7 +67,7 @@ public class UploadActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_download);
+        setContentView(R.layout.activity_upload);
         //create the subclass
 
 
@@ -129,7 +129,7 @@ public class UploadActivity extends Activity {
 
         sp_course_name = (Spinner) findViewById(R.id.course_name);
         sp_course_id = (Spinner) findViewById(R.id.term);
-        btnSubmit = (Button) findViewById(R.id.course_search);
+        btnSubmit = (Button) findViewById(R.id.note_upload);
         final Context context = this;
 
         btnSubmit.setOnClickListener(new OnClickListener() {

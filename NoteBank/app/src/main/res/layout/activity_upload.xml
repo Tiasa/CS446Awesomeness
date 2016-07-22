@@ -35,7 +35,7 @@
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:id="@+id/upload_coursename_spinner"
+                android:id="@+id/course_name"
                 android:layout_gravity="center_horizontal"
                 android:spinnerMode="dropdown" />
 
@@ -50,7 +50,7 @@
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:id="@+id/upload_courseid_spinner"
+                android:id="@+id/term"
                 android:layout_gravity="center_horizontal"
                 android:spinnerMode="dropdown" />
 
@@ -64,7 +64,7 @@
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:id="@+id/upload_courseprof_spinner"
+                android:id="@+id/course_prof"
                 android:layout_gravity="center_horizontal"
                 android:spinnerMode="dropdown"
                 android:layout_weight="0.80" />
